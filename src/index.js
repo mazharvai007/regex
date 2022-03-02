@@ -1,5 +1,3 @@
-import "./styles.css";
-
 let colorValue = document.querySelector(".colorValue");
 let red = document.querySelector(".red");
 let green = document.querySelector(".green");
