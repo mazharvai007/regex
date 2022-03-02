@@ -1,3 +1,3 @@
 # Hexadecimal to RGB
 
-[Live](https://mazhar1987.github.io/regex/)
+### [Live Demo](https://mazhar1987.github.io/regex/)
