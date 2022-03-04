@@ -8,9 +8,34 @@ body {
 }
 input.colorValue {
   height: 30px;
-  width: 200px;
+  width: -webkit-fill-available;
   border-radius: 3px;
   border: 1px solid lightgray;
   padding: 5px 10px;
   margin-bottom: 5px;
+}
+.error {
+  color: red;
+  font-size: 14.5px;
+  height: 15px;
+  overflow: hidden;
+  visibility: visible;
+}
+pre.codeWrap {
+  background-color: darkslategrey;
+  display: none;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+pre.codeWrap code {
+  color: #fff;
+}
+pre.codeWrap .copy {
+  color: #fff;
+  cursor: pointer;
+}
+pre.codeWrap .copy img {
+  width: 15px;
+  height: 15px;
 }

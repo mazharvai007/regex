@@ -1,7 +1,8 @@
 let colorValue = document.querySelector(".colorValue");
-let red = document.querySelector(".red");
-let green = document.querySelector(".green");
-let blue = document.querySelector(".blue");
+let error = document.querySelector(".error");
+let codeWrap = document.querySelector(".codeWrap");
+let code = document.querySelector("code.code");
+let copy = document.querySelector(".copy img");
 
 colorValue.addEventListener("keyup", (e) => {
   e.preventDefault();
@@ -14,14 +15,17 @@ colorValue.addEventListener("keyup", (e) => {
     let output = regx.exec(value);
 
     if (output === null) {
-      return (red.innerHTML = "Not a valid color");
+      return (error.innerHTML = "Not a valid color");
     } else {
-      red.innerHTML = `Red: ${getColorValue(output[1])}`;
-      green.innerHTML = `Green: ${getColorValue(output[2])}`;
-      blue.innerHTML = `Blue: ${getColorValue(output[3])}`;
+      codeWrap.style.display = "flex";
+      return (code.innerHTML = `rgb(${getColorValue(
+        output[1]
+      )}, ${getColorValue(output[2])}, ${getColorValue(output[3])})`);
     }
   } else {
-    red.innerHTML = "Not a valid color";
+    if (e.target.value === "") {
+      return (error.innerHTML = "Enter a valid color");
+    }
   }
 });
 
@@ -31,3 +35,10 @@ function getColorValue(hex) {
   }
   return parseInt(hex, 16);
 }
+
+console.log(copy.innerText);
+
+copy.addEventListener("click", (e) => {
+  e.preventDefault();
+  navigator.clipboard.writeText(code.innerText);
+});
